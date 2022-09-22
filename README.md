@@ -30,13 +30,13 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Переходим в папку с файлом docker-compose.yaml:
+Перейти в папку с файлом docker-compose.yaml:
 
 ```
 cd infra
 ```
 
-Поднимаем контейнеры (infra_db_1, infra_web_1, infra_nginx_1):
+Поднять контейнеры (infra_db_1, infra_web_1, infra_nginx_1):
 
 ```
 docker-compose up -d --build
