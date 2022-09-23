@@ -1,4 +1,3 @@
-
 ## API_YAMDB
 ***
 ### Описание проекта:
@@ -42,13 +41,13 @@ cd infra
 docker-compose up -d --build
 ```
 
-Выполнить миграции:
+Выполнить миграции (перейти в папку с файлом manage.py):
 
 ```
 docker-compose exec web python manage.py migrate
 ```
 
-Создать суперпользователя (указываем имя, адрес эл.почты, пароль):
+Создать суперпользователя (указать имя, адрес эл.почты, пароль):
 
 ```
 docker-compose exec web python manage.py createsuperuser
@@ -60,16 +59,55 @@ docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-Создать дамп базы данных (нет в текущем репозитории):
+Создать дамп базы данных:
 
 ```
-docker-compose exec web python manage.py dumpdata > dumpPostrgeSQL.json
+docker-compose exec web python manage.py dumpdata > fixtures.json
 ```
 
 Остановить контейнеры:
 
 ```
 docker-compose down -v
+```
+
+### Шаблон наполнения файла .env:
+
+```
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres1
+DB_HOST=db
+DB_PORT=5432
+```
+
+## Примеры использования api:
+
+Получение произведений:
+
+```
+GET /api/v1/titles/
+```
+
+Добавление произведения (только администратор):
+
+```
+POST /api/v1/titles/
+```
+
+В параметрах передавать json:
+
+```
+{
+    "name": "Название произведения",
+    "year": 1990,
+    "description": "Описание произведения",
+    "genre": [
+    "fantasy"
+    ],
+    "category": "films"
+}
 ```
 
 ***
