@@ -1,4 +1,16 @@
-## API_YAMDB
+# API_YAMDB
+***
+### Стек технологий:
+
+- Python 3.7
+- DRF (Django REST framework)
+- Django
+- Docker
+- Gunicorn
+- nginx
+- PostgreSQL
+- GIT
+
 ***
 ### Описание проекта:
 
