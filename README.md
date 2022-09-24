@@ -12,7 +12,6 @@
 ```
 git clone https://github.com/IrinaSMR/infra_sp2.git
 cd infra_sp2
-cd api_yamdb
 ```
 
 Cоздать и активировать виртуальное окружение:
@@ -26,6 +25,7 @@ python -m pip install --upgrade pip
 Установить зависимости из файла requirements.txt:
 
 ```
+cd api_yamdb
 pip install -r requirements.txt
 ```
 
@@ -41,7 +41,7 @@ cd infra
 docker-compose up -d --build
 ```
 
-Выполнить миграции (перейти в папку с файлом manage.py):
+Выполнить миграции:
 
 ```
 docker-compose exec web python manage.py migrate
